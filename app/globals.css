@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap");
+
+/* CSS Reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Root styles */
+:root {
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif KR" !important;
+  --primary: #dfcb93;
+  --primary-light: #fff5da;
+  --primary-line: #fff5da66;
+  --primary-text-grad: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 245, 218, 1) 100%
+  );
+  --primary-line-grad: linear-gradient(
+    90deg,
+    rgba(255, 245, 218, 0) 0%,
+    rgba(255, 245, 218, 0.4) 20%,
+    rgba(255, 245, 218, 0.4) 80%,
+    rgba(255, 245, 218, 0) 100%
+  );
+  --primary-line-grad2: linear-gradient(
+    90deg,
+    rgba(255, 245, 218, 0.2) 0%,
+    rgba(255, 245, 218, 0.4) 20%,
+    rgba(255, 245, 218, 0.4) 80%,
+    rgba(255, 245, 218, 0.2) 100%
+  );
+  --black-btn-grad: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 20%,
+    rgba(0, 0, 0, 0.5) 80%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  --black-btn-grad2: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.7) 20%,
+    rgba(0, 0, 0, 0.7) 80%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  --black-btn-left-grad: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.7) 20%,
+    rgba(0, 0, 0, 0.7) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+html {
+  font-size: max(16px, 0.78vw);
+  user-select: none;
+}
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  html {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,50 @@
+.character-display {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  gap: 8%;
+  z-index: 1;
+}
+
+.character-sprite {
+  height: 100%;
+  transition: all 0.1s ease;
+  filter: brightness(0.5);
+}
+
+.character-sprite.active-character {
+  filter: brightness(1);
+}
+
+/* 마운트 시에만 등장 애니메이션 재생 */
+.character-sprite .sprite.fade-in {
+  animation: fadeInCharacter 0.4s ease-in;
+}
+
+.character-sprite .sprite {
+  height: 100%;
+}
+
+@keyframes fadeInCharacter {
+  from {
+    opacity: 0;
+    transform: translateY(4%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.character-image {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}

@@ -1,0 +1,134 @@
+/* 경고 다이얼로그 */
+.confirm-dialog-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  animation: fadeIn 0.1s ease-in;
+}
+
+.confirm-dialog {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 1rem;
+  padding: 1.75rem 2rem;
+  max-width: 80%;
+  width: 28.125rem;
+  max-height: 80%;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.5s ease-out;
+}
+
+.confirm-dialog::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  border: 0.0625rem solid transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 245, 218, 0.1) 0%,
+    rgba(255, 245, 218, 0.2) 20%,
+    rgba(255, 245, 218, 0.2) 80%,
+    rgba(255, 245, 218, 0.1) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.confirm-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--primary-light);
+  text-align: center;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid transparent;
+  border-image: var(--primary-line-grad2) 1;
+}
+
+.confirm-message {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 300;
+  word-break: keep-all;
+  margin: 0;
+  color: var(--primary-light);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.confirm-message strong {
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.confirm-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.confirm-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  width: 100%;
+  height: 2.75rem;
+  padding: 0.625rem 1rem;
+  background: var(--black-btn-grad);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-align: left;
+  color: var(--primary-light);
+}
+
+.confirm-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  border: 0.0625rem solid transparent;
+  background: var(--primary-line-grad2);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.confirm-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-line-grad2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.confirm-btn:hover::after {
+  opacity: 1;
+}
+
+.confirm-btn:active {
+  filter: brightness(1.2);
+}

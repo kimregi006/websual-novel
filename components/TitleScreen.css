@@ -1,0 +1,332 @@
+.title-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  /* min-width: 80rem; */
+  height: 100%;
+  /* min-height: 45rem; */
+  background: url(/assets/title.png) center/cover no-repeat;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.title-screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000099;
+  pointer-events: none;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.75rem;
+  width: 75rem;
+  max-width: 80%;
+  animation: fadeIn 0.5s ease-in;
+  z-index: 1;
+}
+
+.title-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.title-box {
+  position: relative;
+  border-bottom: solid 0.0625rem var(--primary-line);
+  width: 100%;
+}
+
+.game-title {
+  padding: 0 2rem 1rem 2rem;
+  font-size: 4rem;
+  line-height: 1.5;
+  font-weight: 600;
+  word-break: keep-all;
+  color: transparent;
+  background: var(--primary-text-grad);
+  background-clip: text;
+  filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.6));
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+}
+
+.line-deco {
+  position: absolute;
+  display: inline-block;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  background-color: var(--primary);
+}
+
+.title-box .line-deco.left {
+  left: 0;
+  bottom: 0;
+  transform: rotate(-45deg) translate(-50%, 35%);
+}
+
+.title-box .line-deco.right {
+  right: 0;
+  bottom: 0;
+  transform: rotate(45deg) translate(50%, 35%);
+}
+
+.title-box .line-deco.left::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(100%, 150%);
+  display: inline-block;
+  width: 0.5625rem;
+  height: 0.5625rem;
+  background-color: var(--primary);
+}
+
+.title-box .line-deco.right::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-100%, 150%);
+  display: inline-block;
+  width: 0.5625rem;
+  height: 0.5625rem;
+  background-color: var(--primary);
+}
+
+.game-subtitle {
+  max-width: 90%;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  font-weight: 300;
+  word-break: keep-all;
+  color: var(--primary-light);
+  text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
+
+.icon-subtitle {
+  display: inline-block;
+  width: 2.25rem;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  background: url(/assets/icon/story.svg) center/contain no-repeat;
+  vertical-align: top;
+  margin-right: 0.625rem;
+}
+
+.title-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.start-button,
+.load-button {
+  position: relative;
+  padding: 1rem 5.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary-light);
+  background: var(--black-btn-grad);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.start-button .line-deco.left,
+.load-button .line-deco.left {
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  opacity: 0.4;
+}
+
+.start-button .line-deco.right,
+.load-button .line-deco.right {
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0.4;
+}
+
+.start-button::before,
+.load-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  border: 0.0625rem solid transparent;
+  background: var(--primary-line-grad2);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.start-button::after,
+.load-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-line-grad2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.start-button:hover::after,
+.load-button:hover::after {
+  opacity: 1;
+}
+
+.start-button:active,
+.load-button:active {
+  filter: brightness(1.2);
+}
+
+/* 음소거 버튼 */
+.title-music-button-container {
+  position: absolute;
+  top: 2rem;
+  right: 1.25rem;
+  z-index: 10;
+}
+
+.title-music-button {
+  position: relative;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  background: var(--black-btn-grad);
+  cursor: pointer;
+  transition: all 0.1s ease;
+  backdrop-filter: blur(4px);
+  font-size: 0;
+}
+
+.title-music-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  background: var(--primary-line-grad2);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.title-music-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-line-grad2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.title-music-button:hover::after {
+  opacity: 1;
+}
+
+.title-music-button:active {
+  filter: brightness(1.2);
+}
+
+.title-music-button.music-on .game-button-icon {
+  background: url(/assets/icon/musicon.svg) center/contain no-repeat;
+}
+
+.title-music-button.music-off .game-button-icon {
+  background: url(/assets/icon/musicoff.svg) center/contain no-repeat;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  font-weight: 300;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  color: var(--primary);
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .title-container {
+    gap: 3rem;
+  }
+  .title-content {
+    gap: 1.25rem;
+  }
+  .game-title {
+    padding-bottom: 0.75rem;
+    font-size: 3rem;
+  }
+  .game-subtitle {
+    font-size: 1.25rem;
+  }
+  .icon-subtitle {
+    width: 2rem;
+    height: 2rem;
+  }
+  .title-music-button-container {
+    top: 1.25rem;
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .title-container {
+    gap: 3rem;
+  }
+  .title-content {
+    gap: 1.25rem;
+  }
+  .game-title {
+    padding-bottom: 0.75rem;
+    font-size: 3rem;
+  }
+  .game-subtitle {
+    font-size: 1.25rem;
+  }
+  .icon-subtitle {
+    width: 2rem;
+    height: 2rem;
+  }
+  .title-music-button-container {
+    top: 1.25rem;
+  }
+}
